@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Transaction;
 
+use App\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        $results = Transaction::all();
+        dd($results);
+        return  Response::json($results);
     }
 
     /**
@@ -44,10 +47,10 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Transaction $transaction)
     {
-        //
-    }
+       return $this->successResponse(['data'=>$transaction]);
+     }
 
     /**
      * Show the form for editing the specified resource.
