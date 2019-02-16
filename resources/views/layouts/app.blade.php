@@ -19,6 +19,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
     <style type="text/css">
         body {
   font-size: .875rem;
@@ -159,9 +162,14 @@
                     </ul>
         </nav>
 
-        <main class="py-4">
+        <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
             @yield('content')
-        </main>
+          </main>
+        </div>
+
+      </div>
       <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

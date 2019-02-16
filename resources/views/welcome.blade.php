@@ -147,16 +147,27 @@ body {
         <h1 class="cover-heading">Bienvenido.</h1>
         <p class="lead">Finanzas SYS es el grupo financiero más grande de Colombia y uno de los grupos bancarios líderes en Centroamérica.</p>
         <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+        <button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#Caiste">
+        Learn more
+        </button>
         </p>
       </main>
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+          <p>Cover template for <a href="#">Sistemas lo mejor</a>, by Nosotros</p>
         </div>
       </footer>
     </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="Caiste" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <img src="{{ asset('img/caiste.jpg') }}"/>
+    </div>
+  </div>
+</div>
           <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
