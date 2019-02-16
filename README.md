@@ -30,4 +30,4 @@ public function store(Request $request)
         $variable= Nombre_Modelo::create($campos);
         return response()->json(['data'=>$variable],201);
     }
-     ```
+ ```
