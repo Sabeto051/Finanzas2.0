@@ -26,8 +26,8 @@ public function store(Request $request)
     {
         $campos= $request->all();
         $campos['user_id']= Auth::id();
-        //dd($campos);
         $variable= Nombre_Modelo::create($campos);
-        return response()->json(['data'=>$variable],201);
+        return response()->json(['data'=>$variable],201);// Respuesta JSON
+        return back();  //Redirección a página anterior
     }
  ```
