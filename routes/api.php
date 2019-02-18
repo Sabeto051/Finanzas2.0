@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 /**
 * Transactions
 */
-Route::resource('transactions','Transaction\TransactionController');
+

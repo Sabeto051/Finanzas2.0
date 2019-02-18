@@ -5,9 +5,19 @@ namespace App\Http\Controllers\Transaction;
 use App\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +25,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $results = Transaction::all();
-        dd($results);
-        return  Response::json($results);
+       $transacciones= Transaction::where('user_id','=',Auth::id())->orderBy('created_at', 'desc')->get();
+         return view('Transaction.create')->with('transacciones',$transacciones);
     }
 
     /**
@@ -38,7 +47,20 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user= Auth::user();
+        $campos= $request->all();
+        $campos['user_id']= $user->id;
+        $transa= Transaction::create($campos);
+        if($campos['tipo']=='Ingreso'){
+         $user->saldo+=$campos['valor'];
+        }elseif($campos['tipo']=='Inversión'){
+          $user->saldo-=$campos['valor'];
+          $user->inversion+=$campos['valor'];  
+        }if($campos['tipo']=='Prestamo'){
+          $user->deuda+=$campos['valor'];
+        }
+        $user->save();
+        return back();
     }
 
     /**

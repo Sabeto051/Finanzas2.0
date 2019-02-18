@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"a",
+				"array"
+			],
+			[
+				"crea",
+				"created"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
 				"resu",
 				"$results〔variable〕"
 			],
@@ -128,28 +140,38 @@
 	"buffers":
 	[
 		{
-			"file": "app/User.php",
+			"file": "resources/views/Transaction/create.blade.php",
 			"settings":
 			{
-				"buffer_size": 687,
+				"buffer_size": 2870,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/welcome.blade.php",
+			"file": "resources/views/home.blade.php",
 			"settings":
 			{
-				"buffer_size": 4730,
+				"buffer_size": 1853,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/layouts/app.blade.php",
+			"file": "database/migrations/2014_10_12_000000_create_users_table.php",
 			"settings":
 			{
-				"buffer_size": 6872,
+				"buffer_size": 961,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/HomeController.php",
+			"settings":
+			{
+				"buffer_size": 816,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -204,27 +226,42 @@
 	"expanded_folders":
 	[
 		"/C/xampp/htdocs/Finanzas",
-		"/C/xampp/htdocs/Finanzas/config",
+		"/C/xampp/htdocs/Finanzas/app",
+		"/C/xampp/htdocs/Finanzas/app/Http",
+		"/C/xampp/htdocs/Finanzas/app/Http/Controllers",
+		"/C/xampp/htdocs/Finanzas/app/Http/Controllers/Transaction",
+		"/C/xampp/htdocs/Finanzas/database",
+		"/C/xampp/htdocs/Finanzas/database/factories",
+		"/C/xampp/htdocs/Finanzas/database/migrations",
 		"/C/xampp/htdocs/Finanzas/resources",
 		"/C/xampp/htdocs/Finanzas/resources/views",
-		"/C/xampp/htdocs/Finanzas/resources/views/layouts"
+		"/C/xampp/htdocs/Finanzas/resources/views/auth",
+		"/C/xampp/htdocs/Finanzas/resources/views/layouts",
+		"/C/xampp/htdocs/Finanzas/resources/views/Transaction"
 	],
 	"file_history":
 	[
-		"/C/xampp/htdocs/Finanzas/app/Transaction.php",
-		"/C/xampp/htdocs/Finanzas/resources/views/layouts/app.blade.php",
 		"/C/xampp/htdocs/Finanzas/resources/views/home.blade.php",
+		"/C/xampp/htdocs/Finanzas/app/Http/Controllers/Transaction/TransactionController.php",
+		"/C/xampp/htdocs/Finanzas/database/factories/MyFactory.php",
+		"/C/xampp/htdocs/Finanzas/app/Http/Controllers/HomeController.php",
+		"/C/xampp/htdocs/Finanzas/database/migrations/2019_02_11_203935_create_transactions_table.php",
+		"/C/xampp/htdocs/Finanzas/app/Http/Controllers/Auth/RegisterController.php",
+		"/C/xampp/htdocs/Finanzas/database/seeds/DatabaseSeeder.php",
+		"/C/xampp/htdocs/Finanzas/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/xampp/htdocs/Finanzas/app/Cuenta.php",
+		"/C/xampp/htdocs/Finanzas/database/migrations/2019_02_18_015127_create_cuentas_table.php",
+		"/C/xampp/htdocs/Finanzas/app/User.php",
 		"/C/xampp/htdocs/Finanzas/resources/views/layouts/nav.blade.php",
+		"/C/xampp/htdocs/Finanzas/resources/views/layouts/app.blade.php",
+		"/C/xampp/htdocs/Finanzas/storage/framework/views/9c139792fbc1201220e053d5aae9df3e7af1b414.php",
+		"/C/xampp/htdocs/Finanzas/app/Transaction.php",
+		"/C/xampp/htdocs/Finanzas/routes/web.php",
+		"/C/xampp/htdocs/Finanzas/routes/api.php",
 		"/C/xampp/htdocs/Finanzas/resources/views/welcome.blade.php",
 		"/C/xampp/htdocs/Finanzas/.env",
-		"/C/xampp/htdocs/Finanzas/app/Http/Controllers/Transaction/TransactionController.php",
 		"/C/xampp/htdocs/Finanzas/app/Providers/AppServiceProvider.php",
-		"/C/xampp/htdocs/Finanzas/database/seeds/DatabaseSeeder.php",
-		"/C/xampp/htdocs/Finanzas/database/factories/MyFactory.php",
 		"/C/xampp/htdocs/Finanzas/database/factories/UserFactory.php",
-		"/C/xampp/htdocs/Finanzas/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/C/xampp/htdocs/Finanzas/database/migrations/2019_02_11_203935_create_transactions_table.php",
-		"/C/xampp/htdocs/Finanzas/routes/api.php",
 		"/C/APIRestful/database/factories/ModelFactory.php",
 		"/C/APIRestful/app/Http/Controllers/User/UserController.php",
 		"/C/APIRestful/app/Product.php",
@@ -318,33 +355,99 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/User.php",
+					"file": "resources/views/Transaction/create.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 687,
+						"buffer_size": 2870,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								656,
-								656
+								2858,
+								2858
 							]
 						],
 						"settings":
 						{
-							"SL.135.region_keys":
+							"SL.20.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"auto_complete": false,
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2194.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/home.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1853,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1141,
+								1141
+							]
+						],
+						"settings":
+						{
+							"SL.185.region_keys":
 							[
 							],
-							"SL.59.region_keys":
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 849.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "database/migrations/2014_10_12_000000_create_users_table.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 961,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
+								613,
+								601
+							]
+						],
+						"settings":
+						{
+							"SL.170.region_keys":
+							[
+								"sublime_linter.protected_regions"
 							],
 							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
@@ -352,74 +455,42 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 26.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "resources/views/welcome.blade.php",
+					"buffer": 3,
+					"file": "app/Http/Controllers/HomeController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4730,
+						"buffer_size": 816,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3935,
-								3935
+								745,
+								745
 							]
 						],
 						"settings":
 						{
-							"SL.155.region_keys":
+							"SL.178.region_keys":
 							[
+								"sublime_linter.protected_regions"
 							],
 							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3766.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "resources/views/layouts/app.blade.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 6872,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								897,
-								871
-							]
-						],
-						"settings":
-						{
-							"SL.157.region_keys":
-							[
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 284.0,
+						"translation.y": 406.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -529,7 +600,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 226.0,
+	"side_bar_width": 275.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

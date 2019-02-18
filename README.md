@@ -20,14 +20,3 @@ public function __construct()
   ```
   $variable= Nombre_Modelo::where('nombre_del_campo','=',Auth::id())->get();
   ```
-## Crear Un registro a partir del id de Usuario
- ```
-public function store(Request $request)
-    {
-        $campos= $request->all();
-        $campos['user_id']= Auth::id();
-        $variable= Nombre_Modelo::create($campos);
-        return response()->json(['data'=>$variable],201);// Respuesta JSON
-        return back();  //Redirección a página anterior
-    }
- ```

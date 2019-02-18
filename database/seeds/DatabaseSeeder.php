@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\Cuenta;
 use App\Transaction;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -18,10 +19,11 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         User::truncate();
         Transaction::truncate();
-        $cantidadUsuarios=500;
-        $CantidadTransacciones=500;
 
+        $cantidadUsuarios=100;
+        $CantidadTransacciones=100;
         factory(User::class,$cantidadUsuarios)->create();
         factory(Transaction::class,$CantidadTransacciones)->create();
+
     }
 }

@@ -11,6 +11,7 @@ class Transaction extends Model
      	'user_id',
      	'tipo',
      	'valor',
+     	'descripcion',
      ];
       public function User()
     {

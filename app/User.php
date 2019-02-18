@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','saldo','deuda','inversion',
     ];
 
     /**
@@ -32,4 +32,5 @@ class User extends Authenticatable
     public function transactions(){
         return $this-> hasMany(Transaction::class); //1 a Muchos
     }
+
 }
