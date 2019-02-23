@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::GET('/transactions', 'Transaction\TransactionController@index')->name('transactions.index');
 Route::POST('/transactions', 'Transaction\TransactionController@store')->name('transactions.store');
+
+Route::get('/userloan', 'UserLoanController@index')->name('userloan.index');

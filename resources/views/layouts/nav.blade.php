@@ -12,7 +12,13 @@
                   <i class="material-icons">account_balance_wallet</i>
                   Transacciones 
                 </a>
-              </li>             
+              </li>
+              <li class="nav-item">
+                <a class="nav-link @if(Request::path()=="userloan") active @endif" href="{{route('userloan.index')}}">
+                  <i class="material-icons">account_balance_wallet</i>
+                  Prestamos de Usuario 
+                </a>
+              </li>
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
