@@ -22,3 +22,5 @@ Route::GET('/transactions', 'Transaction\TransactionController@index')->name('tr
 Route::POST('/transactions', 'Transaction\TransactionController@store')->name('transactions.store');
 
 Route::get('/userloan', 'UserLoanController@index')->name('userloan.index');
+
+Route::get('/loancondition', 'LoanConditionController@index')->name('loancondition.index');

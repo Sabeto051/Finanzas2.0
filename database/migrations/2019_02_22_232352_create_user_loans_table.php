@@ -20,6 +20,7 @@ class CreateUserLoansTable extends Migration
             $table->double('monto');
             $table->double('interes');
             $table->timestamp('fecha_plazo')->nullable();
+            $table->integer('sistema_id')->unsigned();
             $table->timestamps();
         });
     }

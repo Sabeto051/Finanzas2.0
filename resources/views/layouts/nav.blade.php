@@ -16,7 +16,13 @@
               <li class="nav-item">
                 <a class="nav-link @if(Request::path()=="userloan") active @endif" href="{{route('userloan.index')}}">
                   <i class="material-icons">account_balance_wallet</i>
-                  Prestamos de Usuario 
+                  Prestamos de Usuario
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link @if(Request::path()=="loancondition") active @endif" href="{{route('loancondition.index')}}">
+                  <i class="material-icons">account_balance_wallet</i>
+                  Condiciones de Prestamo
                 </a>
               </li>
             </ul>

@@ -19,8 +19,10 @@
 		      <th scope="col">Prestamista ID</th>
 		      <th scope="col">Destinatario ID</th>
 		      <th scope="col">Monto</th>
+					<th scope="col">Interes</th>
+					<th scope="col">Sistema ID</th>
 		      <th scope="col">Fecha Inicio</th>
-              <th scope="col">Fecha Limite</th>
+          <th scope="col">Fecha Limite</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -29,8 +31,10 @@
 		      <td>{{$userloan->prestamista_id}}</td>
 		      <td>{{$userloan->destinatario_id}}</td>
 		      <td>{{number_format($userloan->monto,2,',','.')}}</td>
+					<td>{{number_format($userloan->interes,2,',','.')}}%</td>
+					<td>{{$userloan->sistema_id}}</td>
 		      <td>{{$userloan->created_at}}</td>
-              <td>{{$userloan->fecha_plazo}}</td>
+          <td>{{$userloan->fecha_plazo}}</td>
 		    </tr>
 		        @endforeach
 		  </tbody>

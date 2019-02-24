@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\UserLoan;
+use App\LoanCondition;
 
-class UserLoanController extends Controller
-{   
-
+class LoanConditionController extends Controller
+{
     public function __construct()
     {
         $this->middleware('auth');
@@ -22,8 +21,8 @@ class UserLoanController extends Controller
      */
     public function index()
     {
-        $userloans = UserLoan::where('prestamista_id','=',Auth::id(),'or','destinatario_id','=',Auth::id())->orderBy('created_at', 'desc')->get();
-        return view('UserLoan.index')->with('userloans',$userloans);
+        $conditions = LoanCondition::where('user_id','=',Auth::id())->orderBy('created_at', 'desc')->get();
+        return view('LoanCondition.index')->with('conditions',$conditions);
     }
 
     /**

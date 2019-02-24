@@ -19,7 +19,8 @@ class CreateLoanConditionsTable extends Migration
             $table->double('monto');
             $table->double('interes');
             $table->timestamp('fecha_plazo')->nullable();
-            $table->boolean('activo');
+            $table->boolean('estado');
+            $table->integer('sistema_id')->unsigned();
             $table->timestamps();
         });
     }
