@@ -32,7 +32,7 @@ class LoanConditionController extends Controller
      */
     public function create()
     {
-        //
+        return view('LoanCondition.create');
     }
 
     /**
@@ -43,7 +43,27 @@ class LoanConditionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $condition = new LoanCondition();
+        $campos = $request->all();
+
+        $condition->user_id = Auth::user()->id;
+        $condition->sistema_id = 2;
+        $condition->monto = $campos['monto'];
+        $condition->interes = $campos['interes'];
+
+        if ($campos['estado'] == 'Activo')
+        {
+            $condition->estado = true;
+        }
+        else
+        {
+            $condition->estado = false;
+        }
+
+        $condition->save();
+
+        return redirect('/loancondition');
     }
 
     /**
@@ -65,7 +85,8 @@ class LoanConditionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $condition = LoanCondition::findOrFail($id);
+        return view('LoanCondition.edit')->with('condition',$condition);
     }
 
     /**
@@ -77,7 +98,24 @@ class LoanConditionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $condition = LoanCondition::findOrFail($id);
+        $campos = $request->all();
+
+        $condition->monto = $campos['monto'];
+        $condition->interes = $campos['interes'];
+
+        if ($campos['estado'] == 'Activo')
+        {
+            $condition->estado = true;
+        }
+        else
+        {
+            $condition->estado = false;
+        }
+
+        $condition->save();
+
+        return redirect('/loancondition');
     }
 
     /**

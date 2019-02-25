@@ -18,22 +18,29 @@
 		    <tr>
 		      <th scope="col">Monto</th>
           <th scope="col">Plazo de Tiempo</th>
+					<th scope="col">interes</th>
 					<th scope="col">Estado</th>
+					<th scope="col">Opciones</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		      @foreach($conditions as $condition)
 		    <tr>
-		      <td>{{number_format($condition->monto,2,',','.')}}</td>
+		      <td>{{number_format($condition->monto,2,',','.')}} COP</td>
           <td>1 año</td>
+					<td>{{number_format($condition->interes,2,',','.')}} %</td>
 						@if ($condition->estado = 0)
 						<td>Activo</td>
 						@else
 						<td>Inactivo</td>
 						@endif
-					
+					<td>
+					<a class="btn btn-primary" href="/loancondition/{{ $condition->id }}/edit">Editar</a>
+					<a class="btn btn-primary" href="/loancondition/{{ $condition->id }}/delete">Eliminar</a>
+					</td>
 		    </tr>
 		        @endforeach
+				<tr><a class="btn btn-primary" href="/loancondition/create">Crear Condicion de Prestamo</a></tr>
 		  </tbody>
 		</table>
 		 @else
@@ -46,7 +53,7 @@
 		    </tr>
 		  </thead>
 		</table>
-		    <tr><p>No hay registros disponibles</p></tr>
+		    <tr><p>No hay Condiciones de Prestamo definidas</p></tr>
 		   @endif
 				</div>
 			</div>
