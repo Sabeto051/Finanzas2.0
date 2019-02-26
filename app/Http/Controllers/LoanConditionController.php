@@ -106,11 +106,11 @@ class LoanConditionController extends Controller
 
         if ($campos['estado'] == 'Activo')
         {
-            $condition->estado = true;
+            $condition->estado = 1;
         }
         else
         {
-            $condition->estado = false;
+            $condition->estado = 0;
         }
 
         $condition->save();
@@ -126,6 +126,8 @@ class LoanConditionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $condition = LoanCondition::find($id);
+        $condition->delete();
+        return redirect('/loancondition');
     }
 }

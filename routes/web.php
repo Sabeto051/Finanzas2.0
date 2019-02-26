@@ -23,8 +23,4 @@ Route::POST('/transactions', 'Transaction\TransactionController@store')->name('t
 
 Route::get('/userloan', 'UserLoanController@index')->name('userloan.index');
 
-Route::get('/loancondition', 'LoanConditionController@index')->name('loancondition.index');
-Route::get('/loancondition/create', 'LoanConditionController@create')->name('loancondition.create');
-Route::post('/loancondition', 'LoanConditionController@store')->name('loancondition.store');
-Route::get('/loancondition/{loan_condition}/edit', 'LoanConditionController@edit')->name('loancondition.edit');
-Route::post('/loancondition/{loan_condition}', 'LoanConditionController@update')->name('loancondition.update');
+Route::resource('/loancondition', 'LoanConditionController');

@@ -9,7 +9,7 @@
       </div>
       <div class="row">
       	<div class="col-lg-12">
-       <form method="POST" action="/loancondition/{{ $condition->id }}">
+       <form method="POST" action="/loancondition">
        	  @csrf
       	<div class="card">
 		  <div class="card-body">

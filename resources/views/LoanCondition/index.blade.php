@@ -29,20 +29,38 @@
 		      <td>{{number_format($condition->monto,2,',','.')}} COP</td>
           <td>1 año</td>
 					<td>{{number_format($condition->interes,2,',','.')}} %</td>
-						@if ($condition->estado = 0)
-						<td>Activo</td>
+						@if ($condition->estado == 1)
+							<td>Activo</td>
 						@else
-						<td>Inactivo</td>
+							<td>Inactivo</td>
 						@endif
+						
 					<td>
-					<a class="btn btn-primary" href="/loancondition/{{ $condition->id }}/edit">Editar</a>
-					<a class="btn btn-primary" href="/loancondition/{{ $condition->id }}/delete">Eliminar</a>
+					<div class="options_col">
+						<a class="btn btn-primary " href="/loancondition/{{ $condition->id }}/edit">Editar</a>
+						&nbsp;
+						<form class="delete item_options_col" action="/loancondition/{{ $condition->id }}" method="POST">
+							<input type="hidden" name="_method" value="DELETE">
+								@csrf
+								<!-- @method('delete') -->
+							<input class="btn btn-primary" type="submit" value="Eliminar">
+						</form>
+						<!-- <a class="btn btn-primary" href="/loancondition/{{ $condition->id }}/confirmdelete">Eliminar</a> -->
+					</div>
 					</td>
 		    </tr>
 		        @endforeach
 				<tr><a class="btn btn-primary" href="/loancondition/create">Crear Condicion de Prestamo</a></tr>
 		  </tbody>
 		</table>
+
+		<style>
+		
+			.options_col {display:table; }
+			.item_options_col {display:table-cell;}
+		
+		</style>
+
 		 @else
 		 <table class="table">
 		  <thead class="thead-dark">
