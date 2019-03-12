@@ -19,7 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::POST('/home/actualizar', 'HomeController@actualizar')->name('home.actualizar');
+
 Route::resource('/transactions', 'Transaction\TransactionController');
+
 
 Route::resource('/userloan', 'UserLoanController');
 
