@@ -92,16 +92,10 @@ class LocalMessageController extends Controller
         $loan->destinatario_id = $message->destinatario_id;
         $loan->monto = $message->monto;
         $loan->interes = $message->interes;
-        $loan->sistema_id=3;
+        $loan->sistema_id=2;
         $loan->save();
 
-        $loan2 = new UserLoan();
-        $loan2->prestamista_id = $message->destinatario_id;
-        $loan2->destinatario_id = Auth::id();
-        $loan2->monto = $message->monto;
-        $loan2->interes = $message->interes;
-        $loan2->sistema_id=3;
-        $loan2->save();
+
 
         
         $message->estado = 1;
