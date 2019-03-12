@@ -29,3 +29,7 @@ Route::resource('/userloan', 'UserLoanController');
 Route::resource('/loancondition', 'LoanConditionController');
 
 Route::POST('/userloan/change', 'UserLoanController@change')->name('userloan.change');
+
+Route::resource('/localloan', 'LocalLoanController');
+
+Route::resource('/localmessage', 'LocalMessageController');

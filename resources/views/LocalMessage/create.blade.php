@@ -4,14 +4,13 @@
 @extends('layouts.nav')
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 	 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Editar Condiciones de Prestamo {{$condition->id}}</h1>
+            <h1 class="h2">Condiciones de Prestamo</h1>
 
       </div>
       <div class="row">
       	<div class="col-lg-12">
-       <form method="POST" action="/loancondition/{{$condition->id}}">
+       <form method="POST" action="{{ route('loancondition.store') }}">
        	  @csrf
-					 @method('put')
       	<div class="card">
 		  <div class="card-body">
 		    <h5 class="card-title">Crear Nuevo</h5>
@@ -31,7 +30,7 @@
 						<div class="input-group-prepend">
 									<div class="input-group-text">$</div>
 						</div>
-			   	<input type="double" min="0" id="monto" name="monto" class="form-control "  placeholder="0" value="{{$condition->monto}}" required>
+			   	<input type="double" min="0" id="monto" name="monto" class="form-control "  placeholder="0" required>
 
 				</div>
 				<div class="form-group row">
@@ -41,7 +40,7 @@
 						<div class="input-group-prepend">
 									<div class="input-group-text">%</div>
 						</div>
-			   	<input type="double" min="0" id="interes" name="interes" class="form-control "  placeholder="0" value="{{$condition->interes}}" required>
+			   	<input type="double" min="0" id="interes" name="interes" class="form-control "  placeholder="0" required>
 
 			</div>
 				  <button type="submit" class="btn btn-primary btn-block">Registrar</button>
