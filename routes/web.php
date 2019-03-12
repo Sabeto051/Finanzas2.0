@@ -33,3 +33,5 @@ Route::POST('/userloan/change', 'UserLoanController@change')->name('userloan.cha
 Route::resource('/localloan', 'LocalLoanController');
 
 Route::resource('/localmessage', 'LocalMessageController');
+
+Route::POST('/localloan/{localloan}' , 'LocalLoanController@crearm')->name('localloan.crearm');

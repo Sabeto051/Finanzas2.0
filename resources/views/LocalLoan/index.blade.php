@@ -47,7 +47,9 @@
 					<td>{{number_format($loanc->interes,2,',','.')}}%</td>
 					<td>1 año</td>
 					<td>{{$loanc->sistema_id}}</td>
-					<td>Boton Aceptar</td>
+					<td>
+					<a class="btn btn-primary" href="/localloan/{{$loanc->id}}/edit">Enviar Solicitud</a>
+					</td>
 		    </tr>
 						@endif
 		        @endforeach

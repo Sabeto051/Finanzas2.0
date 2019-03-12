@@ -9,47 +9,17 @@
       </div>
       <div class="row">
       	<div class="col-lg-12">
-       <form method="POST" action="{{ route('loancondition.store') }}">
-       	  @csrf
-      	<div class="card">
-		  <div class="card-body">
-		    <h5 class="card-title">Crear Nuevo</h5>
-		    <div class="form-group row">
-		    	<div class="col-lg-12">
-			  <label for="estado">Estado:</label>
-			  <select class="form-control" type="text" name="estado" id="estado">
-					<option>{{__('Activo')}}</option>
-					<option>{{__('Inactivo')}}</option>
-			  </select>
-			</div>
-			</div>
-			 <div class="form-group row">
-			    <div class="col-lg-6 col-md-6 col-sm-12">
-			    	<label for="monto">Monto:</label>
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-									<div class="input-group-text">$</div>
-						</div>
-			   	<input type="double" min="0" id="monto" name="monto" class="form-control "  placeholder="0" required>
+       
+					<h1>Enviar Solicitud</h1>
 
-				</div>
-				<div class="form-group row">
-					 <div class="col-lg-6 col-md-6 col-sm-12">
-			    	<label for="interes">Intereses:</label>
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-									<div class="input-group-text">%</div>
-						</div>
-			   	<input type="double" min="0" id="interes" name="interes" class="form-control "  placeholder="0" required>
+					<form class="item_options_col" action="/localloan/{{ $loanc->id }}" method="POST">
+								@csrf
+								<div class="form-group row">
+								</div>
+							<input class="btn btn-primary btn-block" type="submit" value="Enviar">
+					</form>
 
-			</div>
-				  <button type="submit" class="btn btn-primary btn-block">Registrar</button>
-			    </div>
-			</div>
-		  </div>
-		</div>
-      	</form>
-      </div>
+      	</div>
       </div>
 </main>
 

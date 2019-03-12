@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\LoanCondition;
+use App\{LoanCondition, LocalMessage};
 
 class LocalLoanController extends Controller
 {
@@ -35,7 +35,7 @@ class LocalLoanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         //
     }
@@ -70,7 +70,10 @@ class LocalLoanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $loanc = LoanCondition::findOrFail($id);
+        return view('LocalLoan.create',[
+            'loanc'=> $loanc
+        ]);
     }
 
     /**
@@ -80,9 +83,25 @@ class LocalLoanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
         //
+    }
+
+    public function crearm($id)
+    {
+        $loanc = LoanCondition::findOrFail($id);
+        $message = new LocalMessage();
+        
+        $message->monto = $loanc->monto;
+        $message->interes = $loanc->interes;
+        $message->destinatario_id= Auth::id();
+        $message->prestamista_id = $loanc->user_id;
+        $message->sistema_id = $loanc->sistema_id;
+
+        $message->save();
+
+        return redirect('/localloan');
     }
 
     /**
