@@ -56,8 +56,6 @@ class TransactionController extends Controller
         }elseif($campos['tipo']=='Inversión'){
           $user->saldo-=$campos['valor'];
           $user->inversion+=$campos['valor'];  
-        }if($campos['tipo']=='Prestamo'){
-          $user->deuda+=$campos['valor'];
         }
         $user->save();
         return back();
@@ -105,6 +103,8 @@ class TransactionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transa = Transaction::find($id);
+        $transa->delete();
+        return redirect('/transactions');
     }
 }

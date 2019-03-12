@@ -42,7 +42,6 @@
 						<form class="delete item_options_col" action="/loancondition/{{ $condition->id }}" method="POST">
 							<input type="hidden" name="_method" value="DELETE">
 								@csrf
-								<!-- @method('delete') -->
 							<input class="btn btn-primary" type="submit" value="Eliminar">
 						</form>
 						<!-- <a class="btn btn-primary" href="/loancondition/{{ $condition->id }}/confirmdelete">Eliminar</a> -->

@@ -21,7 +21,6 @@
 			       <option>{{__('Ingreso')}}</option>
 			       <option>{{__('Inversión')}}</option>
 				   <option>{{__('Gasto')}}</option>
-				  <option>{{__('Prestamo')}}</option>
 			  </select>
 			</div>
 			</div> 
@@ -58,6 +57,7 @@
 		      <th scope="col">Descripci&oacuten</th>
 		      <th scope="col">Valor</th>
 		      <th scope="col">Fecha</th>
+					<th scope="col">Opciones</th>
 		    </tr>
 		  </thead>		 
 		  <tbody>		  	
@@ -67,6 +67,14 @@
 		      <td>{{$trasa->descripcion}}</td>
 		      <td>{{number_format($trasa->valor,2,',','.')}}</td>
 		      <td>{{$trasa->created_at}}</td>
+
+					<td>
+					<form class="delete item_options_col" action="/transactions/{{ $trasa->id }}" method="POST">
+							<input type="hidden" name="_method" value="DELETE">
+								@csrf
+							<input class="btn btn-primary" type="submit" value="Eliminar">
+					</form>
+					</td>
 		    </tr>
 		        @endforeach
 		  </tbody>		 
