@@ -20,6 +20,7 @@ class CreateLocalMessagesTable extends Migration
             $table->double('monto');
             $table->double('interes');
             $table->integer('sistema_id')->unsigned();
+            $table->boolean('estado')->default(0);
             $table->timestamps();
         });
     }

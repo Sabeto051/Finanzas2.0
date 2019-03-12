@@ -70,7 +70,10 @@ class LocalMessageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $message = LocalMessage::findOrFail($id);
+        return view('LocalMessage.edit',[
+            'message' => $message
+        ]);
     }
 
     /**
@@ -80,9 +83,31 @@ class LocalMessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $message = LocalMessage::findOrFail($id);
+
+        $loan = new UserLoan();
+        $loan->prestamista_id = Auth::id();
+        $loan->destinatario_id = $message->destinatario_id;
+        $loan->monto = $message->monto;
+        $loan->interes = $message->interes;
+        $loan->sistema_id=3;
+        $loan->save();
+
+        $loan2 = new UserLoan();
+        $loan2->prestamista_id = $message->destinatario_id;
+        $loan2->destinatario_id = Auth::id();
+        $loan2->monto = $message->monto;
+        $loan2->interes = $message->interes;
+        $loan2->sistema_id=3;
+        $loan2->save();
+
+        
+        $message->estado = 1;
+        $message->save();
+
+        return redirect('/localmessage');
     }
 
     /**
@@ -93,6 +118,8 @@ class LocalMessageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $message = LocalMessage::find($id);
+        $message->delete();
+        return redirect('/localmessage');
     }
 }

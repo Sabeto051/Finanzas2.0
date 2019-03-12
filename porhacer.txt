@@ -1,0 +1,10 @@
+crear api ruta
+
+{
+valor
+interes
+cuotas
+id_prestamista
+id_prestamo
+}
+

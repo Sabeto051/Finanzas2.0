@@ -26,6 +26,7 @@
 		  </thead>
 		  <tbody>
 		      @foreach($localmessages as $localmessage)
+					@if ($localmessage->estado==0)
 		    <tr>
 					<td>{{ $localmessage->destinatario_id }}</td>
 		      <td>{{number_format($localmessage->monto,2,',','.')}} COP</td>
@@ -35,17 +36,17 @@
 						
 					<td>
 					<div class="options_col">
-						<a class="btn btn-primary " href="/loancondition/{{ $condition->id }}/edit">Editar</a>
+						<a class="btn btn-primary " href="/localmessage/{{ $localmessage->id }}/edit">Aceptar</a>
 						&nbsp;
-						<form class="delete item_options_col" action="/loancondition/{{ $condition->id }}" method="POST">
+						<form class="delete item_options_col" action="/localmessage/{{ $localmessage->id }}" method="POST">
 							<input type="hidden" name="_method" value="DELETE">
 								@csrf
 							<input class="btn btn-primary" type="submit" value="Eliminar">
 						</form>
-						<!-- <a class="btn btn-primary" href="/loancondition/{{ $condition->id }}/confirmdelete">Eliminar</a> -->
 					</div>
 					</td>
 		    </tr>
+						@endif
 		        @endforeach
 		  </tbody>
 		</table>
