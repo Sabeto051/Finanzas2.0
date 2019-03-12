@@ -12,6 +12,28 @@
       	<div class="col-lg-12">
       	<div class="card">
 		  <div class="card-body">
+
+			<form action="{{ route('userloan.change') }}" method="POST">
+				@csrf
+				<div class="form-group">
+					<label for="roll">Roll: </label>
+						<select class="form-control" type="text" name="roll" id="roll">
+							<option>{{__('Prestamista')}}</option>
+							<option>{{__('Destinatario')}}</option>
+						</select>
+				</div>
+
+					<button type="submit" class="btn btn-primary">Filtrar</button>
+			</form>
+
+			<h2>
+			@if ($tipo == 0)
+						Prestamista
+			@else
+						Destinatario
+			@endif
+			</h2>
+
 		  	 @if(!empty($userloans))
       	<table class="table table-striped">
 		  <thead class="thead-dark">

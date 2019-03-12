@@ -9,10 +9,12 @@ use App\UserLoan;
 
 class UserLoanController extends Controller
 {   
+    var $tipo = 0;
 
     public function __construct()
     {
         $this->middleware('auth');
+        
     }
 
     /**
@@ -22,8 +24,33 @@ class UserLoanController extends Controller
      */
     public function index()
     {
-        $userloans = UserLoan::where('prestamista_id','=',Auth::id(),'or','destinatario_id','=',Auth::id())->orderBy('created_at', 'desc')->get();
-        return view('UserLoan.index')->with('userloans',$userloans);
+        $userloansP = UserLoan::where('prestamista_id','=',Auth::id())->orderBy('created_at', 'desc')->get();
+        $userloansD = UserLoan::where('destinatario_id','=',Auth::id())->orderBy('created_at', 'desc')->get();
+        
+        if ($this->tipo == 0){
+            $userloans = $userloansP;
+        } else {
+            $userloans = $userloansD;
+        }
+        
+        return view('UserLoan.index',[
+            'userloans'=> $userloans,
+            'tipo'=>$this->tipo
+            ]);
+    }
+
+    public function change(Request $request)
+    {
+        $campos = $request->all();
+        if ($campos['roll'] == 'Destinatario')
+        {
+            $this->tipo=1;
+        }
+        else
+        {
+            $this->tipo=0;
+        }
+        return $this->index();
     }
 
     /**
